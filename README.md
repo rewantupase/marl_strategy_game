@@ -1,6 +1,6 @@
 # Multi-Agent Strategy Game AI
 
-> **70% win rate in self-play · CTDE architecture · PPO + GAE · PettingZoo AEC**
+**70% win rate in self-play · CTDE architecture · PPO + GAE · PettingZoo AEC**
 
 A production-grade multi-agent reinforcement learning system where autonomous agents compete on a grid-based strategy game. Agents learn cooperative and adversarial behaviours through Proximal Policy Optimization (PPO) with Centralized Training / Decentralized Execution (CTDE).
 
