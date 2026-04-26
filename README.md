@@ -354,8 +354,3 @@ tensorboard --logdir runs/
 ## License
 
 MIT License — see `LICENSE` for details.
-<<<<<<< HEAD
-#
-=======
-# 
->>>>>>> 49461a283bbb7f8bbddabc9d78e537f4e806a77c
