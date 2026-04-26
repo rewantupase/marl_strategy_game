@@ -1,0 +1,47 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# Default Training Configuration
+# ──────────────────────────────────────────────────────────────────────────────
+
+environment:
+  grid_size:        12
+  num_agents:       2
+  max_steps:        500
+  wall_density:     0.12
+  resource_density: 0.06
+  agent_hp:         100
+  attack_damage:    20
+  fortify_bonus:    10
+  view_radius:      4
+
+ppo:
+  lr:               3.0e-4
+  gamma:            0.99
+  gae_lambda:       0.95
+  clip_eps:         0.2
+  value_clip_eps:   0.2
+  entropy_coef:     0.01
+  value_loss_coef:  0.5
+  max_grad_norm:    0.5
+  n_epochs:         8
+  batch_size:       256
+  rollout_steps:    2048
+  hidden_dim:       256
+  centralized:      true
+  normalize_adv:    true
+  device:           "cpu"   # "cuda" if GPU available
+
+training:
+  total_timesteps:  2_000_000
+  seed:             42
+  eval_interval:    50
+  save_interval:    100
+  n_eval_episodes:  20
+  log_dir:          "runs"
+  checkpoint_dir:   "checkpoints"
+
+self_play:
+  enabled:            true
+  strategy:           "random"    # latest | random | prioritized
+  pool_size:          20
+  snapshot_interval:  50
+  elo_k:              32.0

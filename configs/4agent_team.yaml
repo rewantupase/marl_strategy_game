@@ -1,0 +1,48 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# 4-Agent Team Battle Configuration
+# Agents 0+1 vs Agents 2+3
+# ──────────────────────────────────────────────────────────────────────────────
+
+environment:
+  grid_size:        16
+  num_agents:       4
+  max_steps:        800
+  wall_density:     0.10
+  resource_density: 0.08
+  agent_hp:         120
+  attack_damage:    25
+  fortify_bonus:    15
+  view_radius:      5
+
+ppo:
+  lr:               2.5e-4
+  gamma:            0.99
+  gae_lambda:       0.95
+  clip_eps:         0.15
+  value_clip_eps:   0.15
+  entropy_coef:     0.015
+  value_loss_coef:  0.5
+  max_grad_norm:    0.5
+  n_epochs:         10
+  batch_size:       512
+  rollout_steps:    4096
+  hidden_dim:       512
+  centralized:      true
+  normalize_adv:    true
+  device:           "cpu"
+
+training:
+  total_timesteps:  5_000_000
+  seed:             0
+  eval_interval:    100
+  save_interval:    200
+  n_eval_episodes:  50
+  log_dir:          "runs/4agent"
+  checkpoint_dir:   "checkpoints/4agent"
+
+self_play:
+  enabled:           true
+  strategy:          "prioritized"
+  pool_size:         30
+  snapshot_interval: 100
+  elo_k:             32.0
