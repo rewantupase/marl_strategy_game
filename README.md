@@ -45,7 +45,7 @@ A production-grade multi-agent reinforcement learning system where autonomous ag
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    CTDE Training Loop                    │
+│                    CTDE Training Loop                   │
 │                                                         │
 │  Agent 0 obs ─┐                                         │
 │  Agent 1 obs ─┼──► Joint Obs ──► Centralized Critic     │
